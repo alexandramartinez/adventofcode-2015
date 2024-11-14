@@ -172,6 +172,9 @@ then sizeOf ($)
 
 ## 🔹 Day 4
 
+> [!NOTE]
+> None of these scripts will run from the DW Playground. Part 1 can be run from vscode but Part 2 needs to run from the CLI.
+
 ### Part 1
 
 <details>
@@ -189,8 +192,6 @@ fun getCorrectHash(number:Number) =
 getCorrectHash(0)
 ```
 </details>
-
-<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2015&path=scripts%2Fday4%2Fpart1"><img width="300" src="/images/dwplayground-button.png"><a>
 
 ### Part 2
 
@@ -212,5 +213,3 @@ fun getCorrectHash(number:Number) =
 getCorrectHash(0)
 ```
 </details>
-
-<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2015&path=scripts%2Fday4%2Fpart2"><img width="300" src="/images/dwplayground-button.png"><a>
