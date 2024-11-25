@@ -259,3 +259,20 @@ payload splitBy "\n" map ((line) -> do {
 </details>
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2015&path=scripts%2Fday5%2Fpart2"><img width="300" src="/images/dwplayground-button.png"><a>
+
+## 🔹 Day 6
+
+### Part 1
+
+Ok, I tried several approaches here and I didn't want to just discard the ones that didn't work, so I'm keeping them here.
+
+- **[Attempt 1 - tailrec](/scripts/day6/part1/attempt1.dwl)** - For some reason this script was not processed as Tail Recursive??? I'm pretty sure it is. But ohwell. Had to discard the whole thing bc the payload is 300 lines (more than 255) so I was getting the `StackOverflow` error.
+- **[Attempt 2 - reduce + mapleafvalues](/scripts/day6/part1/attempt2.dwl)** - This one works perfectly fine when testing with a smaller matrix. But since the challenge is a 0,999 matrix, this solution times out.
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+
+```
+</details>
