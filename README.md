@@ -268,11 +268,29 @@ Ok, I tried several approaches here and I didn't want to just discard the ones t
 
 - **[Attempt 1 - tailrec](/scripts/day6/part1/attempt1.dwl)** - For some reason this script was not processed as Tail Recursive??? I'm pretty sure it is. But ohwell. Had to discard the whole thing bc the payload is 300 lines (more than 255) so I was getting the `StackOverflow` error.
 - **[Attempt 2 - reduce + mapleafvalues](/scripts/day6/part1/attempt2.dwl)** - This one works perfectly fine when testing with a smaller matrix. But since the challenge is a 0,999 matrix, this solution times out.
+- **[Attempt 3 - i dont even know](/scripts/day6/part1/attempt3.dwl)**
+
+## 🔹 Day 8
+
+### Part 1
 
 <details>
   <summary>Script</summary>
 
 ```dataweave
-
+import try from dw::Runtime
+var newp = (payload splitBy "\n") map {
+    code: sizeOf($),
+    memory: do {
+        var t = try(() -> read($, "json"))
+        ---
+        (if (t.success) t.result else read($) replace /\\x[A-F0-9a-f]{1}[A-F0-9a-f]{1}/ with "x")
+        then sizeOf($)
+    }
+}
+---
+sum(newp.code) - sum(newp.memory)
 ```
 </details>
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2015&path=scripts%2Fday8%2Fpart1"><img width="300" src="/images/dwplayground-button.png"><a>
