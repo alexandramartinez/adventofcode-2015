@@ -294,3 +294,21 @@ sum(newp.code) - sum(newp.memory)
 </details>
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2015&path=scripts%2Fday8%2Fpart1"><img width="300" src="/images/dwplayground-button.png"><a>
+
+### Part 2
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+import try from dw::Runtime
+var newp = (payload splitBy "\n") map {
+    code: sizeOf($),
+    part2: sizeOf(write($))
+}
+---
+sum(newp.part2) - sum(newp.code)
+```
+</details>
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2015&path=scripts%2Fday8%2Fpart2"><img width="300" src="/images/dwplayground-button.png"><a>
